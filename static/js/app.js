@@ -6,17 +6,19 @@ function buildMetadata(sample) {
 
   // Use `d3.json` to Fetch the Metadata for a Sample
     d3.json(`/metadata/${sample}`).then((data) => {
-      // Use d3 to Select the Panel with id of `#sample-metadata`
-      var PANEL = d3.select(`#sample-metdata`);
-      // Use `.html("") to Clear any Existing Metadata
-
-      // Use `Object.entries` to Add Each Key & Value Pair to the Panel
-      // Hint: Inside the Loop, Use d3 to Append New Tags for Each Key-Value in the Metadata
-
-      // BONUS: Build the Gauge Chart
-      // buildGauge(data.WFREQ);
+        // Use d3 to Select the Panel with id of `#sample-metadata`
+        var PANEL = d3.select(`#sample-metdata`);
+        // Use `.html("") to Clear any Existing Metadata
+        PANEL.html("");
+        // Use `Object.entries` to Add Each Key & Value Pair to the Panel
+        // Hint: Inside the Loop, Use d3 to Append New Tags for Each Key-Value in the Metadata
+        Object.entries(data).forEach(([key, value]) => {
+          PANEL.append("h6").text(`${key}:${value}`);
+        })
+        // BONUS: Build the Gauge Chart
+          buildGauge(data.WFREQ);
     })
-  }
+}
 
 function buildCharts(sample) {
 
