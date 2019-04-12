@@ -2,7 +2,7 @@
 
 function buildGauge(WFREQ) {
     // Enter the Washing Frequency Between 0 and 180
-    let level = parseFloat(wfreq) * 20;
+    let level = parseFloat(WFREQ) * 20;
 
     // Trigonometry to Calculate Meter Point
     let degrees = 180 - level;
