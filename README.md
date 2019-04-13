@@ -1,6 +1,10 @@
 # Belly-Button-Biodiversity
 
 
+## Heroku Deployment:
+https://belly-button-biodiversity2019.herokuapp.com/
+
+
 ## Background
 
 Full-Stack Data Analysis to build an interactive dashboard exploring the Belly Button Biodiversity Dataset using Plotly.js, Flask and Heroku
